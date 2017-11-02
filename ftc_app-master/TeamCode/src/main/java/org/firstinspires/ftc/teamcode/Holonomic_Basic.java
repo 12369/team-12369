@@ -6,6 +6,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;									// imports the DcMotor p
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.util.Range;
 import com.vuforia.Marker;
+// vcs test
 
 @TeleOp(name = "OMNI_Wheel_Basic", group = "linear Opmode")                     // Register your Opmode. On the RC the Opmode will show up as the name string.
 
