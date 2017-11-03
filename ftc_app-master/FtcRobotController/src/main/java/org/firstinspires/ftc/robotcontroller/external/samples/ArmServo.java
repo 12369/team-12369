@@ -1,25 +1,18 @@
 package org.firstinspires.ftc.robotcontroller.external.samples;
 
-import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
-import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
-import com.qualcomm.robotcore.util.ElapsedTime;
-
-/**
- * Code to control servo 1 that opens and closes arm to grab glyph cubes
- *
- * _ button is used to toggle servo on and off
- */
 import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+import com.qualcomm.robotcore.util.ElapsedTime;
 import com.qualcomm.robotcore.hardware.Servo;
-import com
+
 @TeleOp (name="Servo_BASIC", group="Linear Opmode")
-@Disabled
-public class Servo_BASIC extends LinearOpMode {
+
+public class ArmServo extends LinearOpMode {
 
     public Servo claw  = null;
-    double claw_min = 0.8;
+    double claw_min = 0.2;
+    double claw_max = 0.8;
 
     // Declare OpMode members.
     private ElapsedTime runtime = new ElapsedTime();
@@ -27,7 +20,7 @@ public class Servo_BASIC extends LinearOpMode {
     @Override
     public void runOpMode() {
         //Report Telemetry Status on the phone.
-        telemety.addData ("Status", "Initialized");
+        telemetry.addData ("Status", "Initialized");
         telemetry.update();
 
         claw = hardwareMap.servo.get("claw");
